@@ -24,7 +24,10 @@ extends Node2D
 var player_score: int = 0
 var enemy_score: int = 0
 
+
 func _ready() -> void:
+	print("Viewport (Game Logic) Size: ", get_viewport_rect().size)
+	print("Window (Physical Screen) Size: ", DisplayServer.window_get_size())
 	var starting_scores: Array[int]
 	starting_scores.append(player_score)
 	starting_scores.append(enemy_score)

@@ -22,16 +22,16 @@
 [ext_resource type="FontFile" uid="uid://bjobcam2eh8gh" path="res://assets/fonts/04b_19/04B_19__.TTF" id="20_1kice"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
-size = Vector2(25, 75)
+size = Vector2(25, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
-size = Vector2(25, 75)
+size = Vector2(25, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnu2h"]
 size = Vector2(25, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
-size = Vector2(1102, 648)
+size = Vector2(1820, 1080)
 
 [sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
 font = ExtResource("20_1kice")
@@ -55,7 +55,7 @@ lose_sfx = ExtResource("4_vtaks")
 clear_sfx = ExtResource("4_0tnpc")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1891450702]
-custom_minimum_size = Vector2(1152, 648)
+custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.083911665, 0.083911665, 0.083911665, 1)
@@ -70,7 +70,7 @@ script = ExtResource("1_uwrxv")
 shape = SubResource("RectangleShape2D_mwb40")
 
 [node name="ColorRect" type="ColorRect" parent="Player" unique_id=1446313246]
-custom_minimum_size = Vector2(25, 75)
+custom_minimum_size = Vector2(25, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -94,7 +94,7 @@ speed = 200
 shape = SubResource("RectangleShape2D_yqjtg")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy" unique_id=14413894]
-custom_minimum_size = Vector2(25, 75)
+custom_minimum_size = Vector2(25, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -112,14 +112,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=910978856]
 limit_left = 0
 limit_top = 0
-limit_right = 1152
-limit_bottom = 648
 
 [node name="Ball" type="Area2D" parent="." unique_id=1086771916 groups=["ball"]]
 unique_name_in_owner = true
 position = Vector2(576, 324)
 script = ExtResource("3_lnu2h")
-speed = 400.0
+speed = 500.0
 paddle_sfx = Array[AudioStreamOggVorbis]([ExtResource("9_trtic"), ExtResource("10_ir15t"), ExtResource("11_ca42v"), ExtResource("12_rysoc"), ExtResource("13_ssvqc")])
 wall_sfx = Array[AudioStreamOggVorbis]([ExtResource("14_264po"), ExtResource("15_1kice"), ExtResource("16_5newe"), ExtResource("17_37s47"), ExtResource("18_bt5mj")])
 
@@ -149,15 +147,15 @@ disable_mode = 1
 priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea" unique_id=1420865238]
-position = Vector2(576, 324)
+position = Vector2(960, 540)
 shape = SubResource("RectangleShape2D_iywne")
 
 [node name="GUI" type="Control" parent="." unique_id=425487554]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -166,6 +164,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 38.0
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="GUI/HBoxScoreContainer" unique_id=275098517]

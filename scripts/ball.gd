@@ -13,6 +13,9 @@ var vertical_speed: float
 
 var direction : Vector2 = Vector2.LEFT
 
+func _ready() -> void:
+	position = get_viewport_rect().size / 2
+
 func _process(delta: float) -> void:
 	if direction == Vector2.LEFT:
 		position.x -= speed * delta
