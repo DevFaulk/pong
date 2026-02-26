@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bsmiwgq41voxs"]
+
+[sub_resource type="SystemFont" id="SystemFont_lbhrr"]
+font_names = PackedStringArray("04b_19", "Agave Nerd Font")
+
+[resource]
+font = SubResource("SystemFont_lbhrr")
+font_size = 32
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.3529412)
+shadow_offset = Vector2(3, 3)

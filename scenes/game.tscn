@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://dtchwqlmtjm83"]
+
+[ext_resource type="Script" uid="uid://c423ck8kjaq1j" path="res://scenes/game.gd" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://dfu0uv822b86t" path="res://scripts/player.gd" id="1_uwrxv"]
+[ext_resource type="AudioStream" uid="uid://is0rwwodni74" path="res://assets/sfx/Pickup__010.ogg" id="2_ir15t"]
+[ext_resource type="AudioStream" uid="uid://btuob3okrdb0w" path="res://assets/music/winfretless.ogg" id="2_p57ef"]
+[ext_resource type="Script" uid="uid://pvdke6ow4olb" path="res://scripts/enemy.gd" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://bysusegsecub2" path="res://scripts/ball.gd" id="3_lnu2h"]
+[ext_resource type="AudioStream" uid="uid://k11yi4vgkjxc" path="res://assets/sfx/switch10.ogg" id="4_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://ccsdfmocbquiv" path="res://assets/music/losetrumpet.ogg" id="4_vtaks"]
+[ext_resource type="LabelSettings" uid="uid://bsmiwgq41voxs" path="res://assets/fonts/score_font.tres" id="5_iywne"]
+[ext_resource type="AudioStream" uid="uid://h4qwmh26ucor" path="res://assets/sfx/paddle/impactSoft_heavy_000.ogg" id="9_trtic"]
+[ext_resource type="AudioStream" uid="uid://dit0abarbte82" path="res://assets/sfx/paddle/impactSoft_heavy_001.ogg" id="10_ir15t"]
+[ext_resource type="AudioStream" uid="uid://cnu2kknnsx1jk" path="res://assets/sfx/paddle/impactSoft_heavy_002.ogg" id="11_ca42v"]
+[ext_resource type="AudioStream" uid="uid://bwbd3ap5dho5u" path="res://assets/sfx/paddle/impactSoft_heavy_003.ogg" id="12_rysoc"]
+[ext_resource type="AudioStream" uid="uid://cwqx2tk82yjyy" path="res://assets/sfx/paddle/impactSoft_heavy_004.ogg" id="13_ssvqc"]
+[ext_resource type="AudioStream" uid="uid://2nx83a7d5q5q" path="res://assets/sfx/wall/footstep_concrete_000.ogg" id="14_264po"]
+[ext_resource type="AudioStream" uid="uid://dlofa5mjf6aii" path="res://assets/sfx/wall/footstep_concrete_001.ogg" id="15_1kice"]
+[ext_resource type="AudioStream" uid="uid://bertuas22q38s" path="res://assets/sfx/wall/footstep_concrete_002.ogg" id="16_5newe"]
+[ext_resource type="AudioStream" uid="uid://cc3sg654vwd25" path="res://assets/sfx/wall/footstep_concrete_003.ogg" id="17_37s47"]
+[ext_resource type="AudioStream" uid="uid://c53ay6gkf0wjk" path="res://assets/sfx/wall/footstep_concrete_004.ogg" id="18_bt5mj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
+size = Vector2(25, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
+size = Vector2(25, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnu2h"]
+size = Vector2(25, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(1102, 648)
+
+[sub_resource type="SystemFont" id="SystemFont_lbhrr"]
+font_names = PackedStringArray("04b_19", "Agave Nerd Font")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
+font = SubResource("SystemFont_lbhrr")
+font_size = 72
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.3529412)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iywne"]
+font = SubResource("SystemFont_lbhrr")
+font_size = 52
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.3529412)
+shadow_offset = Vector2(3, 3)
+
+[node name="Game" type="Node2D" unique_id=1505392129]
+script = ExtResource("1_lbhrr")
+score_sfx = ExtResource("2_ir15t")
+win_sfx = ExtResource("2_p57ef")
+lose_sfx = ExtResource("4_vtaks")
+clear_sfx = ExtResource("4_0tnpc")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1891450702]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.083911665, 0.083911665, 0.083911665, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" type="Area2D" parent="." unique_id=407421122]
+unique_name_in_owner = true
+position = Vector2(37.5, 324)
+script = ExtResource("1_uwrxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1555430921]
+shape = SubResource("RectangleShape2D_mwb40")
+
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=1446313246]
+custom_minimum_size = Vector2(25, 75)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -37.5
+offset_right = 12.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemy" type="Area2D" parent="." unique_id=1330979696]
+unique_name_in_owner = true
+position = Vector2(1114.5, 324)
+script = ExtResource("2_yqjtg")
+speed = 200
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=965915696]
+shape = SubResource("RectangleShape2D_yqjtg")
+
+[node name="ColorRect" type="ColorRect" parent="Enemy" unique_id=14413894]
+custom_minimum_size = Vector2(25, 75)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -37.5
+offset_right = 12.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.12156863, 0.12156863, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=910978856]
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
+
+[node name="Ball" type="Area2D" parent="." unique_id=1086771916 groups=["ball"]]
+unique_name_in_owner = true
+position = Vector2(576, 324)
+script = ExtResource("3_lnu2h")
+speed = 400.0
+paddle_sfx = Array[AudioStreamOggVorbis]([ExtResource("9_trtic"), ExtResource("10_ir15t"), ExtResource("11_ca42v"), ExtResource("12_rysoc"), ExtResource("13_ssvqc")])
+wall_sfx = Array[AudioStreamOggVorbis]([ExtResource("14_264po"), ExtResource("15_1kice"), ExtResource("16_5newe"), ExtResource("17_37s47"), ExtResource("18_bt5mj")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1646698844]
+shape = SubResource("RectangleShape2D_lnu2h")
+
+[node name="ColorRect" type="ColorRect" parent="Ball" unique_id=946573715]
+custom_minimum_size = Vector2(25, 25)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -12.5
+offset_right = 12.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BallSFX" type="AudioStreamPlayer2D" parent="Ball" unique_id=332196448]
+unique_name_in_owner = true
+
+[node name="GameArea" type="Area2D" parent="." unique_id=651374868]
+disable_mode = 1
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea" unique_id=1420865238]
+position = Vector2(576, 324)
+shape = SubResource("RectangleShape2D_iywne")
+
+[node name="GUI" type="Control" parent="." unique_id=425487554]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxScoreContainer" type="HBoxContainer" parent="GUI" unique_id=705441975]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/HBoxScoreContainer" unique_id=275098517]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+
+[node name="EnemyScoreLabel" type="Label" parent="GUI/HBoxScoreContainer/MarginContainer" unique_id=1760076650]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Enemy: 0"
+label_settings = ExtResource("5_iywne")
+
+[node name="PlayerScoreLabel" type="Label" parent="GUI/HBoxScoreContainer/MarginContainer" unique_id=555542855]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Player: 0"
+label_settings = ExtResource("5_iywne")
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI" unique_id=6294652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverContainer" type="VBoxContainer" parent="GUI/CenterContainer" unique_id=386576192]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="WinnerText" type="Label" parent="GUI/CenterContainer/GameOverContainer" unique_id=465633237]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Player Wins!"
+label_settings = SubResource("LabelSettings_p57ef")
+horizontal_alignment = 1
+
+[node name="GameOverText" type="Label" parent="GUI/CenterContainer/GameOverContainer" unique_id=91044374]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GUI/CenterContainer/GameOverContainer" unique_id=1882231596]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Restart"
+
+[node name="ExitButton" type="Button" parent="GUI/CenterContainer/GameOverContainer" unique_id=1877745317]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Exit Game"
+
+[node name="GameSFX" type="AudioStreamPlayer2D" parent="." unique_id=1751191151]
+unique_name_in_owner = true
+process_mode = 3
+
+[connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
+[connection signal="area_entered" from="Enemy" to="Enemy" method="_on_area_entered"]
+[connection signal="body_entered" from="Enemy" to="Enemy" method="_on_body_entered"]
+[connection signal="area_exited" from="GameArea" to="." method="_on_game_area_area_exited"]
+[connection signal="body_exited" from="GameArea" to="." method="_on_game_area_body_exited"]
+[connection signal="pressed" from="GUI/CenterContainer/GameOverContainer/RestartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GUI/CenterContainer/GameOverContainer/ExitButton" to="." method="_on_exit_button_pressed"]
