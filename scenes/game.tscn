@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://bertuas22q38s" path="res://assets/sfx/wall/footstep_concrete_002.ogg" id="16_5newe"]
 [ext_resource type="AudioStream" uid="uid://cc3sg654vwd25" path="res://assets/sfx/wall/footstep_concrete_003.ogg" id="17_37s47"]
 [ext_resource type="AudioStream" uid="uid://c53ay6gkf0wjk" path="res://assets/sfx/wall/footstep_concrete_004.ogg" id="18_bt5mj"]
+[ext_resource type="FontFile" uid="uid://bjobcam2eh8gh" path="res://assets/fonts/04b_19/04B_19__.TTF" id="20_1kice"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
 size = Vector2(25, 75)
@@ -32,19 +33,15 @@ size = Vector2(25, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
 size = Vector2(1102, 648)
 
-[sub_resource type="SystemFont" id="SystemFont_lbhrr"]
-font_names = PackedStringArray("04b_19", "Agave Nerd Font")
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
-font = SubResource("SystemFont_lbhrr")
+font = ExtResource("20_1kice")
 font_size = 72
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 0.3529412)
 shadow_offset = Vector2(3, 3)
 
 [sub_resource type="LabelSettings" id="LabelSettings_iywne"]
-font = SubResource("SystemFont_lbhrr")
+font = ExtResource("20_1kice")
 font_size = 52
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 0.3529412)

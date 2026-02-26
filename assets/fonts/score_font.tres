@@ -1,10 +1,9 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://bsmiwgq41voxs"]
 
-[sub_resource type="SystemFont" id="SystemFont_lbhrr"]
-font_names = PackedStringArray("04b_19", "Agave Nerd Font")
+[ext_resource type="FontFile" uid="uid://bjobcam2eh8gh" path="res://assets/fonts/04b_19/04B_19__.TTF" id="1_wqsnn"]
 
 [resource]
-font = SubResource("SystemFont_lbhrr")
+font = ExtResource("1_wqsnn")
 font_size = 32
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 0.3529412)

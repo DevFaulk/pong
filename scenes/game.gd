@@ -95,7 +95,6 @@ func restart_game():
 
 func play_sfx(sfx: AudioStreamOggVorbis) -> void:
 	if sfx:
-		print("1")
 		game_sfx.stream = sfx
 		game_sfx.play()
 	else:
